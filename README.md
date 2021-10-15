@@ -1,6 +1,5 @@
 # Capstone
 oct 12 - December 12. 2 monthsish. Fridays 4-5 5-7pm. 8 weeks.
-- Ask Prof Ford. AWS Educate account. 50$ 
 
 
 #Image recognition Messing with Contrast etc. 
@@ -23,6 +22,10 @@ https://microsoft.github.io/AirSim/reinforcement_learning/
 BEING ABLE TO DETECT WHERE THE PARKING SPOT LOCATION 
 - Fly a set path and then label each parking lot 
 - Use Markers to determine location and also fly.
+
+1. Set up open SSH to access NVIDIA access. Jarrod.
+2. Moiz and Patrick make model work.
+3. 
 
 
 
