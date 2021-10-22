@@ -1,0 +1,5 @@
+classes = 2
+train  = /content/gdrive/MyDrive/Parking_Spot/train.txt
+valid  = /content/gdrive/MyDrive/Parking_Spot/valid.txt
+names = /content/gdrive/MyDrive/Parking_Spot/obj.names
+backup = /content/gdrive/MyDrive/Parking_Spot
