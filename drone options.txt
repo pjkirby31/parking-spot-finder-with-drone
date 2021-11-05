@@ -1,0 +1,25 @@
+Ways of flying a drone:
+1. Training the drone with Airsim and reinforcment learning
+2. Fly the drone manually and "memorize" the commands
+3. Draw path on map or something and write code to convert a path to commands
+	3a. Would have to set certain variables like height,speed,etc
+4. Fly the drone manually and record the path with drone's camera and then write code that will track pixels and how the scene is changing to figure out the path the drone is taking. Then it could maybe recreate the controls from this? (probably very hard)
+5. Set up markers and have the drone follow markers
+6. Have drone "follow" someone around and then remember path?
+
+How to make drone avoid collisions on its own:
+1. Reinforcement learning with Airsim
+2. Use LIDAR and other sensors to create a "bubble" around drone and make sure nothing gets too close to it
+3. Probably some other easier way
+
+Reinforcement learning steps:
+1. Set up Airsim and either build an enviroment or get one that is already made
+	1a. I'm not sure if we need to build an enviroment of Arcadia since we are just teaching the drone how to fly along a path/to somewhere. So if the drone can do that in one enviroment is should be able to do that in another?
+2. Train
+3. Somehow take the model that we have built and put it on a flight controller that we can put on a drone
+	3a. Need to make sure we have a compatible flight controller
+	3b. We would either need to buy a drone or build one that can work for us
+		3ba. Drone prices were pretty high so it would probably be cheaper to build one. However it could be difficult to build one unless we have a very comprehensive/easy kit to use
+4. Once we have drone and it can fly on its own, put raspberry pi and other stuff on it so it can detect parking spots
+5. If we get this far then we'll figure out what to do from here
+	
