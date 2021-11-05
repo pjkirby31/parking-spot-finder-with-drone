@@ -22,4 +22,13 @@ Reinforcement learning steps:
 		3ba. Drone prices were pretty high so it would probably be cheaper to build one. However it could be difficult to build one unless we have a very comprehensive/easy kit to use
 4. Once we have drone and it can fly on its own, put raspberry pi and other stuff on it so it can detect parking spots
 5. If we get this far then we'll figure out what to do from here
+
+Idea to store/remember controls:
+Key parts of controlling are:
+	Direction
+	Throttle (how hard/ how much)
+	How long to do something for
+So if we stored this information in a file on the raspberry pi, (would have to collect it first) we should be able to read in the controls before the drone takes off and then it can execute the controls
+One problem with this would be if there is wind or an obstacle, then this would all be thrown off and the drone's flight path would be messed up
+	This is a problem for any way of giving the drone a pre-determined path
 	
