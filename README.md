@@ -23,10 +23,13 @@ BEING ABLE TO DETECT WHERE THE PARKING SPOT LOCATION
 - Fly a set path and then label each parking lot 
 - Use Markers to determine location and also fly.
 
-1. Set up open SSH to access NVIDIA access. Jarrod.
-2. Moiz and Patrick make model work.
-3. 
-
+Roadmap:
+1. Find and buy a drone (we need one regardless of whether we do AirSim)
+2. Install AirSim and everything we need for it
+3. Test out using an enviroment and try training the drone to do something very simple to make sure it works
+4. If test goes well, then create a basic enviroment of Arcadia for the drone to fly
+    4a. I think there is a way to include the Yolo model into AirSim too
+5. Put it all together
 
 
  
