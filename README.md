@@ -25,6 +25,8 @@ Meeting Thursday 5-6pm
         - I also think the GPS for the raspberry pi has an accelerometer so maybe that info could help
         - https://docs.lib.purdue.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=1131&context=open_access_theses
     - Build some sort of website or web service that we will be able to post open parking spots to
+        - Could host something like a Tomcat server on AWS or GCP and run a java web service on it to recieve new info from raspberry pi 
+        - Should be able to have a nice website for showing where spots are open
 
 ## Project 2: → Vertical Farming with LGS
 - What is done:
