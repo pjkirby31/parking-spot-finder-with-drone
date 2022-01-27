@@ -33,7 +33,7 @@ Meeting Thursday 5-6pm
 - What needs to be done:
     - Control vehicle and get it to follow lines
     - Implement a solution to open doors
-        - Look at ppt for one way to do it
+        - Look at [this ppt](opening-doors.pptx) for one way to do it
     - Find and implement a solution to take pictures high up
         - Use drone on top of car
         - Selfie stick technology
