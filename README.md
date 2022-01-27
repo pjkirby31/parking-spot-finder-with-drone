@@ -23,6 +23,7 @@ Meeting Thursday 5-6pm
         - Since we did order a second GPS a long time ago for the raspberry pi and there is a GPS with the pixhawk, we could set up 2 GPS modules and maybe take an average or something in order to get a more accurate reading
         - If we do that we’ll also know the relative position of where the drone should be based on the last picture, so we might also be able to use that too
         - I also think the GPS for the raspberry pi has an accelerometer so maybe that info could help
+        - https://docs.lib.purdue.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=1131&context=open_access_theses
     - Build some sort of website or web service that we will be able to post open parking spots to
 
 ## Project 2: → Vertical Farming with LGS
