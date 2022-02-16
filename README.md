@@ -3,6 +3,7 @@ Jan 20 - April.
 Meeting Thursday 5-6pm
 
 ## Project 1 → Finding parking spots with drone
+https://www.youtube.com/watch?v=kB9YyG2V-nA
 - What is done:  
     - Trained yolov4-tiny model to detect parking spots  
         - Used this dataset: https://public.roboflow.com/object-detection/pklot   
