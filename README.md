@@ -1,53 +1,41 @@
-## Capstone
-Jan 20 - April.
-Meeting Thursday 5-6pm
+## Parking Spot Finding Drone
 
-## Project 1 → Finding parking spots with drone
-https://www.youtube.com/watch?v=kB9YyG2V-nA
-- What is done:  
-    - Trained yolov4-tiny model to detect parking spots  
-        - Used this dataset: https://public.roboflow.com/object-detection/pklot   
-        - Could get more images with drone and add them to the training dataset to improve accuracy
-    - Deployed model on Raspberry Pi 4
-        - Done on a VM but close enough
-    - Tested the raspberry pi camera along with the physical raspberry pi
-    - Built the drone (just need the new pdb in order to finish the drone)
-- What to do:  
-    - Learn how to use QGroundControl  
-        - It is installed on the Boyer PC, but it might be easier to install it on our laptops  
-    - Set up software with drone and perform all the calibrations
-    - Test flight?????
-        - Definitely should do this in an empty open space for safety
-    - Build propeller guards for the drone
-         - If we’re going to do this it should probably be done before the test flight
-    - Figure out how to get accurate readings from the GPS while drone is flying
-        - Since we did order a second GPS a long time ago for the raspberry pi and there is a GPS with the pixhawk, we could set up 2 GPS modules and maybe take an average or something in order to get a more accurate reading
-        - If we do that we’ll also know the relative position of where the drone should be based on the last picture, so we might also be able to use that too
-        - I also think the GPS for the raspberry pi has an accelerometer so maybe that info could help
-        - https://docs.lib.purdue.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=1131&context=open_access_theses
-    - Build some sort of website or web service that we will be able to post open parking spots to
-        - Could host something like a Tomcat server on AWS or GCP and run a java web service on it to recieve new info from raspberry pi 
-        - Should be able to have a nice website for showing where spots are open
+### Raspberry Pi Setup
+#### Things to install
+- Python 3 (I recommend creating a python virtual enviroment)
+    -  Look at requirements.txt for the packages needed for this project
+- Redis server
+- tmux (not necessary but highly recommended)
 
-## Project 2: → Vertical Farming with LGS
-- What is done:
-    - Have an idea of the goals for this project 
-    - Are looking into using a vehicle to drive around the facility and take pictures instead of a drone
-- What needs to be done:
-    - Control vehicle and get it to follow lines
-    - Implement a solution to open doors
-        - Look at [this ppt](opening-doors.pptx) for one way to do it
-    - Find and implement a solution to take pictures high up
-        - Use drone on top of car
-        - Selfie stick technology
-        - Scissor lift
-        - Lifting arm
-    - Begin data gathering on a type of plant so we can get images
-    - Talk to LGS about different types of data we can collect
-        - Amount of water plants get
-        - Nutrition that plants get
-        - Temperature around plants
+#### How to run
+
+1. Install everything
+2. Go through the scripts in the drone-flying folder and make sure all the code is going to do what you expect
+    - Do test runs without the propellers on 
+3. Run stuff and see how it goes
 
 
-    
+### How does the drone work?
 
+![image](https://user-images.githubusercontent.com/61844179/167757377-545a5b0b-def2-4e1f-9a3a-6b4499c49571.png)
+This is a basic diagram of how we talk to the drone. We connect via wifi over ssh to the raspberry pi. The pi is connected to the drone's flight controller over USB. This allows us to be able to talk directly to the flight controller from our laptop. This could be upgraded to radio or a cellular connection once the drone becomes more autonomous since our idea was that the raspberry pi would be able to handle all of the flight stuff on its own.
+
+
+![image](https://user-images.githubusercontent.com/61844179/167758017-a0066bdd-1243-4891-9c15-03f205a0bfd4.png)
+This is a bit more in depth view of what's going on.
+1. The camera script takes pictures with the USB camera and saves them every half second
+2. The dashboard script uses Rich to display a nice looking dashboard with different drone metrics on it to the terminal
+    - It retrieves all of the metrics from the Redis server
+3. The ping script constantly pings the home laptop to ensure that there is always a connection. If this connection is ever broken the drone will automatically land.
+    - If the drone flies farther this should probably be taken out, but it is a nice safety feature
+4. The flying script takes in manual input and converts it to a certain movement for the drone
+    - Keys are mapped to movements as followed:
+        - w  -> increase altitude by 1m
+        - s -> decease altitude by 1m
+        - a -> decrease yaw to face left (not mapped out yet)
+        - d -> increase yaw to face right (not mapped out yet)
+        - left arrow -> fly west (uses gps so not exact amount)
+        - right arrow -> fly east
+        - up arrow -> fly north
+        - down arrow -> fly south
+    - 
